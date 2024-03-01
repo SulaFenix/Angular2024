@@ -13,4 +13,12 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'aula-1-treinamento';
+
+  constructor() {
+    console.log('Iniciando o construtor')
+  }
+
+  ngOnInit() {
+    console.log('Iniciando o OnInit')
+  }
 }

@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './listagem.component.css'
 })
 export class ListagemProdutosComponent {
+  valorInput: string = ''
 
 }
