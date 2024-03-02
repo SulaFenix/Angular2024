@@ -1,5 +1,5 @@
 <div class="container">
-<my-title title="Usuários"></my-title>
+  <my-title title="Usuários"></my-title>
   <hr />
   <table class="table">
     <thead class="table-dark">
@@ -8,18 +8,21 @@
         <th scope="col">Nome</th>
         <th scope="col">Idade</th>
         <th scope="col">Status</th>
-        <th>Ações</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody class="table-group-divider">
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-        <td>Ações</td>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{ usuario.id }}</th>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.idade }}</td>
+        <td>{{ usuario.ativo ? "Ativo" : "Desativado" }}</td>
+        <td>
+          <button type="button" class="btn btn-danger btn-sm">Remover</button>
+          <button type="button" class="btn btn-secondary btn-sm ms-2">Editar</button>
+        </td>
       </tr>
     </tbody>
   </table>
-  <a class="btn btn-dark" href="/cadastroUsuario" role="button">Cadastrar</a>
+  <a class="btn btn-dark" routerLink="/usuarios/cadastrar" role="button">Cadastrar</a>
 </div>
