@@ -9,7 +9,17 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
+  api = 'http://localhost:3000/usuarios';
+
   buscarTodosUsuarios() {
-    return this.http.get<IUsuario[]>('http://localhost:3000/usuarios');
+    return this.http.get<IUsuario[]>(this.api);
+  }
+
+  cadastrarUsuario(usuario: IUsuario){
+    return this.http.post(this.api, usuario);
+  }
+
+  romoverUsuario(id: number){
+    return this.http.delete(`${this.api}/${id}`);
   }
 }

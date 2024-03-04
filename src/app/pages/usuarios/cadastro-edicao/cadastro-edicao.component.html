@@ -3,7 +3,7 @@
 <my-title title="Usuários / Cadastrar"></my-title>
 <hr>
 
-<form [formGroup]="usuarioForm">
+<form [formGroup]="usuarioForm" (submit)="cadastrarUsuarios()">
   <div class="row">
     <div class="col">
       <div class="mb-3">
@@ -18,5 +18,5 @@
       </div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary" [disabled]="usuarioForm.invalid">Cadastrar</button>
+  <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">Cadastrar</button>
 </form>
