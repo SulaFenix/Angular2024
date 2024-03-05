@@ -54,6 +54,7 @@ export class ListagemUsuariosComponent {
             text: "Seu usuário foi removido",
             icon: "success"
           });
+          this.usuarios = this.usuarios.filter(usuario => usuario.id != id);
         }, erro => {
           console.error(erro);
         });
