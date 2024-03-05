@@ -30,5 +30,14 @@
       "ativo": true,
       "id": 7
     }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nomeProduto": "iPhone 13",
+      "codigoBarras": "5012345678900",
+      "quantidade": 5,
+      "preco": 5000
+    }
   ]
 }
