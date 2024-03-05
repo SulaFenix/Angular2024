@@ -21,7 +21,7 @@
         <td>{{ produto.preco }}</td>
         <td>
           <a [routerLink]="'/produtos/editar/' + produto.id" class="btn btn-secondary btn-sm">Editar</a>
-          <button type="button" class="btn btn-danger btn-sm ms-2">Excluir</button>
+          <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removerProduto(produto.id || 0)">Excluir</button>
         </td>
       </tr>
     </tbody>

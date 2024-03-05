@@ -13,20 +13,14 @@
       "ativo": false
     },
     {
-      "nome": "TEstando",
-      "idade": 222444,
-      "ativo": true,
-      "id": 5
-    },
-    {
-      "nome": "testenovo",
-      "idade": 123,
+      "nome": "Fulano da Silva",
+      "idade": 24,
       "ativo": true,
       "id": 6
     },
     {
-      "nome": "Novo, novo",
-      "idade": 1111,
+      "nome": "Ciclano Oliveira de Souza",
+      "idade": 33,
       "ativo": true,
       "id": 7
     }
@@ -45,6 +39,13 @@
       "codigoBarras": "1234567890123",
       "quantidade": 3,
       "preco": 3500
+    },
+    {
+      "nomeProduto": "Mouse",
+      "codigoBarras": "1234567890000",
+      "quantidade": 10,
+      "preco": 12.99,
+      "id": 4
     }
   ]
 }

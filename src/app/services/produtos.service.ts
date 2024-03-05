@@ -3,15 +3,29 @@ import { Injectable } from '@angular/core';
 import { IProduto } from '../interfaces/produto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProdutosService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   api = 'http://localhost:3000/produtos';
 
-  buscarTodosProdutos(){
+  buscarTodosProdutos() {
     return this.http.get<IProduto[]>(this.api);
+  }
+
+  cadastrarEditarProduto(produto: IProduto) {
+    if (produto.id) {
+      return this.http.put(`${this.api}/${produto.id}`, produto);
+    }
+    return this.http.post(this.api, produto);
+  }
+
+  removerProduto(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
+
+  buscarProdutoPorId(id: number) {
+    return this.http.get<IProduto>(`${this.api}/${id}`);
   }
 }
