@@ -1,3 +1,30 @@
-<p>listagem produtos works!</p>
-
-<!-- <input type="text" [(ngModel)="valorInput"> -->
+<div class="container">
+  <my-title title="Produtos"></my-title>
+  <hr />
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Código de Barras</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let produto of produtos">
+        <th scope="row">{{ produto.id }}</th>
+        <td>{{ produto.nomeProduto }}</td>
+        <td>{{ produto.codigoBarras }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>{{ produto.preco }}</td>
+        <td>
+          <a [routerLink]="'/produtos/editar/' + produto.id" class="btn btn-secondary btn-sm">Editar</a>
+          <button type="button" class="btn btn-danger btn-sm ms-2">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="btn btn-dark" routerLink="/produtos/cadastrar" role="button">Cadastrar</a>
+</div>

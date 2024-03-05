@@ -38,6 +38,13 @@
       "codigoBarras": "5012345678900",
       "quantidade": 5,
       "preco": 5000
+    },
+    {
+      "id": 2,
+      "nomeProduto": "Notebook Dell",
+      "codigoBarras": "1234567890123",
+      "quantidade": 3,
+      "preco": 3500
     }
   ]
 }
