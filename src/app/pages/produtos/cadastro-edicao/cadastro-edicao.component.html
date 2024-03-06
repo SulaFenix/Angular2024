@@ -15,6 +15,9 @@
       <div class="mb-3">
         <label for="codigoBarras" class="form-label">Código de Barras</label>
         <input type="text" class="form-control" id="codigoBarras" formControlName="codigoBarras">
+        <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required']" class="form-text text-danger">Campo obrigatório</div>
+        <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['maxlength']" class="form-text text-danger">Não pode ser maior que 11 caracteres</div>
+        <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['minlength']" class="form-text text-danger">É obrigatório 11 caracteres</div>
       </div>
     </div>
   </div>
@@ -28,7 +31,7 @@
     <div class="col">
       <div class="mb-3">
         <label for="preco" class="form-label">Preço</label>
-        <input type="number" class="form-control" id="preco" formControlName="preco">
+        <input type="text" class="form-control" id="preco" formControlName="preco" prefix="R$ " mask="separator.2" thousandSeparator=",">
       </div>
     </div>
   </div>

@@ -3,5 +3,5 @@ export interface IProduto {
   nomeProduto: string;
   codigoBarras: string;
   quantidade: number;
-  preco: number;
+  preco: string;
 }

@@ -27,18 +27,18 @@
   ],
   "produtos": [
     {
-      "id": 1,
       "nomeProduto": "iPhone 13",
-      "codigoBarras": "5012345678900",
+      "codigoBarras": "50123456789",
       "quantidade": 5,
-      "preco": 5000
+      "preco": 4999.99,
+      "id": 1
     },
     {
-      "id": 2,
       "nomeProduto": "Notebook Dell",
-      "codigoBarras": "1234567890123",
+      "codigoBarras": "12345678901",
       "quantidade": 3,
-      "preco": 3500
+      "preco": 3500.25,
+      "id": 2
     },
     {
       "nomeProduto": "Mouse",
@@ -46,6 +46,34 @@
       "quantidade": 10,
       "preco": 12.99,
       "id": 4
+    },
+    {
+      "nomeProduto": "d",
+      "codigoBarras": "11111111111",
+      "quantidade": 2,
+      "preco": 2,
+      "id": 5
+    },
+    {
+      "nomeProduto": "Teclado",
+      "codigoBarras": "11122233345",
+      "quantidade": 3,
+      "preco": 125.99,
+      "id": 6
+    },
+    {
+      "nomeProduto": "Teste",
+      "codigoBarras": "96385214700",
+      "quantidade": 11,
+      "preco": 1600.99,
+      "id": 8
+    },
+    {
+      "nomeProduto": "Novo",
+      "codigoBarras": "10101010101",
+      "quantidade": 11,
+      "preco": 999000.99,
+      "id": 9
     }
   ]
 }

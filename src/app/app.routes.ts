@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ListagemUsuariosComponent } from './pages/usuarios/listagem/listagem.component';
@@ -25,8 +25,12 @@ export const routes: Routes = [
   { path: 'produtos/editar/:id', component: CadastroEdicaoProdutosComponent}
 ];
 
-// @NgModule({
+ @NgModule({
 //   imports: [RouterModule.forRoot(routes)],
 //   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
+providers:    [
+  { provide: LOCALE_ID, useValue: 'pt' },
+  { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+]
+ })
+ export class AppRoutingModule { }

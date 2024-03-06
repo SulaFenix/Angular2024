@@ -11,11 +11,12 @@ import { ProdutosService } from '../../../services/produtos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduto } from '../../../interfaces/produto';
 import Swal from 'sweetalert2';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-cadastro-edicao',
   standalone: true,
-  imports: [ReactiveFormsModule, PageTitleComponent, CommonModule],
+  imports: [ReactiveFormsModule, PageTitleComponent, CommonModule, NgxMaskDirective],
   templateUrl: './cadastro-edicao.component.html',
   styleUrl: './cadastro-edicao.component.css',
 })
@@ -30,8 +31,8 @@ export class CadastroEdicaoProdutosComponent {
 
   produtoForm = new FormGroup({
     nomeProduto: new FormControl('', Validators.required),
-    codigoBarras: new FormControl(),
-    quantidade: new FormControl(),
+    codigoBarras: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
+    quantidade: new FormControl(0),
     preco: new FormControl(),
   });
 
@@ -48,6 +49,7 @@ export class CadastroEdicaoProdutosComponent {
         this.produtosService
           .buscarProdutoPorId(idNumber)
           .subscribe((produto) => {
+            console.log(produto.preco);
             this.produtoForm.patchValue({
               nomeProduto: produto.nomeProduto,
               codigoBarras: produto.codigoBarras,
@@ -82,4 +84,5 @@ export class CadastroEdicaoProdutosComponent {
       }
     );
   }
+  
 }

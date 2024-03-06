@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PageTitleComponent } from '../../../components/page-title/page-title.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { IProduto } from '../../../interfaces/produto';
 import { ProdutosService } from '../../../services/produtos.service';
 import Swal from 'sweetalert2';
+import { NgxMaskDirective } from 'ngx-mask';
+import ptBr from '@angular/common/locales/pt';
+
+//registerLocaleData(ptBr);
 
 @Component({
   selector: 'app-listagem-produtos',
   standalone: true,
   templateUrl: './listagem.component.html',
   styleUrl: './listagem.component.css',
-  imports: [FormsModule, PageTitleComponent, CommonModule, RouterLink],
+  imports: [FormsModule, PageTitleComponent, CommonModule, RouterLink, NgxMaskDirective],
+  // providers: [{ provide: LOCALE_ID, useValue: 'pt' },
+  // { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },]
 })
 
 export class ListagemProdutosComponent {
