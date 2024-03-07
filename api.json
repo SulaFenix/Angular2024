@@ -41,16 +41,9 @@
       "id": 2
     },
     {
-      "nomeProduto": "Mouse",
-      "codigoBarras": "1234567890000",
-      "quantidade": 10,
-      "preco": 12.99,
-      "id": 4
-    },
-    {
-      "nomeProduto": "d",
-      "codigoBarras": "11111111111",
-      "quantidade": 2,
+      "nomeProduto": "Caneta",
+      "codigoBarras": "11100011100",
+      "quantidade": 20,
       "preco": 2,
       "id": 5
     },
@@ -60,20 +53,6 @@
       "quantidade": 3,
       "preco": 125.99,
       "id": 6
-    },
-    {
-      "nomeProduto": "Teste",
-      "codigoBarras": "96385214700",
-      "quantidade": 11,
-      "preco": 1600.99,
-      "id": 8
-    },
-    {
-      "nomeProduto": "Novo",
-      "codigoBarras": "10101010101",
-      "quantidade": 11,
-      "preco": 999000.99,
-      "id": 9
     }
   ]
 }

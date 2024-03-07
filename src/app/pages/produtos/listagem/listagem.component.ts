@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import { NgxMaskDirective } from 'ngx-mask';
 import ptBr from '@angular/common/locales/pt';
 
-//registerLocaleData(ptBr);
+registerLocaleData(ptBr);
 
 @Component({
   selector: 'app-listagem-produtos',
@@ -17,8 +17,16 @@ import ptBr from '@angular/common/locales/pt';
   templateUrl: './listagem.component.html',
   styleUrl: './listagem.component.css',
   imports: [FormsModule, PageTitleComponent, CommonModule, RouterLink, NgxMaskDirective],
-  // providers: [{ provide: LOCALE_ID, useValue: 'pt' },
-  // { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },]
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt'
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }
+  ]
 })
 
 export class ListagemProdutosComponent {

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { Component, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -6,12 +7,15 @@ import {
   Validators,
 } from '@angular/forms';
 import { PageTitleComponent } from '../../../components/page-title/page-title.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { ProdutosService } from '../../../services/produtos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduto } from '../../../interfaces/produto';
 import Swal from 'sweetalert2';
 import { NgxMaskDirective } from 'ngx-mask';
+import { LOCALE_ID } from '@angular/core';
+
+registerLocaleData(ptBr);
 
 @Component({
   selector: 'app-cadastro-edicao',
@@ -19,6 +23,16 @@ import { NgxMaskDirective } from 'ngx-mask';
   imports: [ReactiveFormsModule, PageTitleComponent, CommonModule, NgxMaskDirective],
   templateUrl: './cadastro-edicao.component.html',
   styleUrl: './cadastro-edicao.component.css',
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt'
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    }
+  ]
 })
 
 export class CadastroEdicaoProdutosComponent {
@@ -32,8 +46,8 @@ export class CadastroEdicaoProdutosComponent {
   produtoForm = new FormGroup({
     nomeProduto: new FormControl('', Validators.required),
     codigoBarras: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]),
-    quantidade: new FormControl(0),
-    preco: new FormControl(),
+    quantidade: new FormControl(0, Validators.required),
+    preco: new FormControl(0, Validators.required),
   });
 
   id: number = 0;
@@ -84,5 +98,5 @@ export class CadastroEdicaoProdutosComponent {
       }
     );
   }
-  
+
 }
